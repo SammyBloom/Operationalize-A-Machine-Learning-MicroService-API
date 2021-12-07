@@ -1,0 +1,5 @@
+# ignore .devops folder
+.devops
+
+# ignore .circleci
+.circleci
