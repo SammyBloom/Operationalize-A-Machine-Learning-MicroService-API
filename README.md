@@ -1,10 +1,10 @@
-<include a CircleCI status badge, here>
+<!-- [![SammyBloom](https://circleci.com/gh/danilobrinu/udacity-cloud-devops-engineer-project-4.svg?style=svg)](https://circleci.com/gh/danilobrinu/udacity-cloud-devops-engineer-project-4) -->
 
-## Project Overview
+## Project Summary
 
-In this project, you will apply the skills you have acquired in this course to operationalize a Machine Learning Microservice API. 
+This project applies the skills acquired in the Udacity Cloud DevOps Engineering Nanodegree course to operationalize a Machine Learning Microservice API. 
 
-You are given a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. You can read more about the data, which was initially taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing). This project tests your ability to operationalize a Python flask app—in a provided file, `app.py`—that serves out predictions (inference) about housing prices through API calls. This project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
+It includes a pre-trained, `sklearn` model that has been trained to predict housing prices in Boston according to several features, such as average rooms in a home and data about highway access, teacher-to-pupil ratios, and so on. You can read more about the data, which was initially taken from Kaggle, on [the data source site](https://www.kaggle.com/c/boston-housing). This project shows my ability to operationalize a Python flask app—in a provided file, `app.py`—that serves out predictions (inference) about housing prices through API calls. This project could be extended to any pre-trained machine learning model, such as those for image recognition and data labeling.
 
 ### Project Tasks
 
@@ -19,7 +19,7 @@ Your project goal is to operationalize this working, machine learning microservi
 
 You can find a detailed [project rubric, here](https://review.udacity.com/#!/rubrics/2576/view).
 
-**The final implementation of the project will showcase your abilities to operationalize production microservices.**
+**The implementation of this project showcases my abilities to operationalize production microservices.**
 
 ---
 
@@ -32,7 +32,7 @@ python3 -m pip install --user virtualenv
 # Check the Python path using `which python3`
 # Use a command similar to this one:
 python3 -m virtualenv --python=<path-to-Python3.7> .devops
-source .devops/bin/activate
+source .devops/Scripts/activate
 ```
 * Run `make install` to install the necessary dependencies
 
@@ -42,9 +42,21 @@ source .devops/bin/activate
 2. Run in Docker:  `./run_docker.sh`
 3. Run in Kubernetes:  `./run_kubernetes.sh`
 
+### Other Files
+1. Make Predictions: `./make_prediction.sh`
+2. Docker Output file `./outout_txt_files/docker_out.txt`
+3. Kubernetes Output file `./outout_txt_files/kubernetes_out.txt`
+4. Requirements file states the requirements for dependency installations `./requirements.txt`
+5. File that contains commands to upload docker images `./upload_docker.sh`
+6. Create working directory and install dependencies `./Dockerfile` 
+7. File for linting and tests `./Makefile`
+
 ### Kubernetes Steps
 
-* Setup and Configure Docker locally
-* Setup and Configure Kubernetes locally
-* Create Flask app in Container
-* Run via kubectl
+* Setup and Configure Docker locally `docker build --tag=latest .`
+* Setup and Configure Kubernetes locally `minikube start`
+* Create Flask app in Container `docker run -p 8080:80 latest`
+* Run via kubectl `kubectl run app1 --image=$dockerpath --port=80`
+* Check pod status `kubectl get pod`
+* Stop Kubernetes Cluster `minikube close`
+* Delete Kubernetes Cluster `minikube delete`
