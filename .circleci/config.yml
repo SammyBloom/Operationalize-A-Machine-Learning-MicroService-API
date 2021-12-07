@@ -15,7 +15,7 @@ jobs:
       # documented at https://circleci.com/docs/2.0/circleci-images/
       # - image: circleci/postgres:9.4
 
-    working_directory: ~/repo
+    working_directory: ./
 
     steps:
       - checkout
@@ -30,23 +30,29 @@ jobs:
       - run:
           name: install dependencies
           command: |
-            python3 -m venv venv
-            . venv/bin/activate
+            python3 -m venv ./.devops
+            source ./.devops/Scripts/activate
             pip install -r requirements.txt
       - save_cache:
           paths:
-            - ./venv
+            - ./.devops
           key: v1-dependencies-{{ checksum "requirements.txt" }}
         
       # run tests!
       - run:
           name: run tests
           command: |
-            . venv/bin/activate
+            source ./.devops/Scripts/activate
             make test
       # run lints!
       - run:
           name: run lint
           command: |
-            . venv/bin/activate
+            source ./.devops/Scripts/activate
             make lint
+
+
+workflows:
+    main:
+        jobs:
+            - build
