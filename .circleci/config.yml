@@ -49,8 +49,8 @@ jobs:
           name: run lint
           command: |
             source ./.devops/Scripts/activate
+            sudo make install-hadolint
             make lint
-
 
 workflows:
   default:
