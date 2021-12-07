@@ -37,6 +37,11 @@ jobs:
           paths:
             - ./.devops
           key: v1-dependencies-{{ checksum "requirements.txt" }}
+
+      - run:
+          name: Install hadolint
+          command: |
+            sudo make install-hadolint    
         
       # run tests!
       - run:
@@ -49,7 +54,6 @@ jobs:
           name: run lint
           command: |
             source ./.devops/Scripts/activate
-            sudo make install-hadolint
             make lint
 
 workflows:
