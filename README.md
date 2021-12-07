@@ -1,4 +1,4 @@
-<!-- [![SammyBloom](https://circleci.com/gh/danilobrinu/udacity-cloud-devops-engineer-project-4.svg?style=svg)](https://circleci.com/gh/danilobrinu/udacity-cloud-devops-engineer-project-4) -->
+[![SammyBloom](https://circleci.com/gh/SammyBloom/Operationalize-A-Machine-Learning-MicroService-API.svg?style=svg)](https://circleci.com/gh/SammyBloom/Operationalize-A-Machine-Learning-MicroService-API)
 
 ## Project Summary
 
