@@ -60,3 +60,8 @@ source .devops/Scripts/activate
 * Check pod status `kubectl get pod`
 * Stop Kubernetes Cluster `minikube close`
 * Delete Kubernetes Cluster `minikube delete`
+
+
+### Github Repo
+
+`https://github.com/SammyBloom/Operationalize-A-Machine-Learning-MicroService-API`
