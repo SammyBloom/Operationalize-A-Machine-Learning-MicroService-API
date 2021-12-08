@@ -28,7 +28,7 @@ install-all: install install-hadolint
 
 test:
 	# Additional, optional, tests could go here
-	python -m pytest -vv --cov=myrepolib tests/*.py
+	python3 -m pytest -vv --cov=myrepolib tests/*.py
 	#python -m pytest --nbval notebook.ipynb
 
 test-junit:
